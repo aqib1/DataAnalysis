@@ -18,3 +18,7 @@ jobs:
       - name: Lint
         run: |
           flake8 .
+      - name: Build
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build
