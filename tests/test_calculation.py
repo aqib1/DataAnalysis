@@ -1,6 +1,7 @@
 import unittest
 from domain.calculations import Calculations
 
+
 class TestCalculation(unittest.TestCase):
 
     @classmethod
@@ -14,5 +15,5 @@ class TestCalculation(unittest.TestCase):
         self.assertEqual(self.calculation.get_difference(), 6)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
