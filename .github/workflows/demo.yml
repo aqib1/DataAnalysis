@@ -1,0 +1,31 @@
+name: Event Demos
+on: [push, workflow_dispatch]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output event data
+        run: echo "${{ toJSON(github.event) }}"
+      - name: Get Code
+        uses: actions/checkout@v6
+      - name: Install Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+      - name: Build
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build
+      - name: Lint
+        run: |
+          flake8 .
+      - name: Run Tests
+        run: |
+          python -m unittest discover -s tests -t . -v
+      - name: Deployment
+        run: echo "Deploying Project"
