@@ -9,6 +9,8 @@ jobs:
       ubuntu-latest
     steps:
       - name: Greetings
-        run: echo "Hello World"
+        run: |
+          echo "Hello World"
+          echo "How are you doing?"
       - name: Goodbye
         run: echo "Done - Bye!"
