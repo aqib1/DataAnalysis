@@ -1,7 +1,7 @@
 import unittest
 from code.calculations import Calculations
 
-class TestCalculation(unittest.TestCase):
+class test_calculation(unittest.TestCase):
 
     @classmethod
     def setUpClass(self):
