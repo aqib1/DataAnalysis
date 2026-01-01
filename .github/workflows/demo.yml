@@ -4,7 +4,18 @@ on:
     types:
       - opened
       - synchronize
-
+    branches:
+      - main
+      - 'dev-*' ## dev-new
+      - 'feature/**' ## feature/new or feature/test/new
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - 'dev-*' ## dev-new
+      - 'feature/**' ## feature/new or feature/test/new
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
