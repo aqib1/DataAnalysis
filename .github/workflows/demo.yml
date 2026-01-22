@@ -1,5 +1,9 @@
 name: Event Demos
-on: [push, workflow_dispatch]
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
 
 jobs:
   deploy:

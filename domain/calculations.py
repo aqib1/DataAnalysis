@@ -12,5 +12,5 @@ class Calculations:
     def get_product(self):
         return self.a * self.b
 
-    def get_quotient(self):
+    def get_divide(self):
         return self.a / self.b
